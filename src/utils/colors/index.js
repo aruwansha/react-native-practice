@@ -12,11 +12,13 @@ const list_color = {
     2: '#E9E9E9',
     3: '#EDEEF0',
     4: '#B1B7C2',
+    5: '#EEEEEE',
   },
   blue: {
     1: '#0066CB',
+    2: '#EDFCFD',
   },
-  white: '#FFFFFF'
+  white: '#FFFFFF',
 };
 
 const colors = {
@@ -37,6 +39,8 @@ const colors = {
     subTitle: list_color.dark[3],
   },
   border: list_color.gray[2],
+  card: list_color.blue[2],
+  newsBorder: list_color.gray[5],
 };
 
 export default colors;

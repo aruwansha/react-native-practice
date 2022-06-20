@@ -23,7 +23,7 @@ const UploadPhoto = ({navigation}) => {
           </View>
           <Text style={styles.name}>Shayna Melinda</Text>
           <Gap height={4} />
-          <Text style={styles.proffesion}>Product Designer</Text>
+          <Text style={styles.profession}>Product Designer</Text>
         </View>
         <View>
           <Button title={'Upload & Continue'} />
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     color: colors.text.primary,
     textAlign: 'center',
   },
-  proffesion: {
+  profession: {
     fontSize: 18,
     fontFamily: fonts.primary[400],
     color: colors.text.secondary,
