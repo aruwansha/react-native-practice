@@ -1,4 +1,4 @@
-import {StyleSheet, Text, View, ScrollView} from 'react-native';
+import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {
   ILDokterAnak,
@@ -9,7 +9,7 @@ import {
 import colors from '../../../utils/colors';
 import fonts from '../../../utils/fonts';
 
-const DoctorCategory = ({category}) => {
+const DoctorCategory = ({category, onPress}) => {
   const IconDoctor = () => {
     if (category === 'dokter umum') {
       return <ILDokterUmum />;
@@ -26,7 +26,7 @@ const DoctorCategory = ({category}) => {
     return <ILDokterUmum />;
   };
   return (
-    <View style={styles.container}>
+    <TouchableOpacity style={styles.container} onPress={onPress}>
       <View>
         <IconDoctor />
       </View>
@@ -34,7 +34,7 @@ const DoctorCategory = ({category}) => {
         <Text style={styles.text}>Saya butuh</Text>
         <Text style={styles.category}>{category}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

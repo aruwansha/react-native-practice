@@ -1,18 +1,53 @@
 import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
-import {ListDoctor} from '../../components/molecules';
+import React, {useState} from 'react';
+import {List} from '../../components/molecules';
 import fonts from '../../utils/fonts';
 import colors from '../../utils/colors';
-import {Gap} from '../../components/atoms';
+import {DMDoctor6, DMDoctor2, DMDoctor3} from '../../assets';
 
-const Messages = () => {
+const Messages = ({navigation}) => {
+  const nav = navigation;
+  const [doctors, setDoctors] = useState([
+    {
+      id: 1,
+      profile: DMDoctor6,
+      name: 'Alexander Jannie',
+      isRead: true,
+      description: 'Baik ibu, terima kasih banyak atas wakt...',
+    },
+    {
+      id: 2,
+      profile: DMDoctor3,
+      name: 'Nairobi Putri Hayza',
+      isRead: false,
+      description: 'Oh tentu saja tidak karena jeruk it...',
+    },
+    {
+      id: 3,
+      profile: DMDoctor2,
+      name: 'John McParker Steve',
+      isRead: true,
+      description: 'Oke menurut pak dokter bagaimana unt...',
+    },
+  ]);
   return (
     <View style={styles.page}>
       <View style={styles.content}>
         <Text style={styles.sectionLabel}>Messages</Text>
-        <ListDoctor isRead={true} />
-        <ListDoctor />
-        <ListDoctor isRead={true} />
+        {doctors.map((doctor, index) => {
+          return (
+            <List
+              key={index}
+              profile={doctor.profile}
+              name={doctor.name}
+              isRead={doctor.isRead}
+              description={doctor.description}
+              onPress={() => {
+                nav.navigate('Chatting');
+              }}
+            />
+          );
+        })}
       </View>
     </View>
   );

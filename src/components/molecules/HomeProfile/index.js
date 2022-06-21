@@ -1,13 +1,13 @@
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {DMProfileSet} from '../../../assets';
 import fonts from '../../../utils/fonts';
 import colors from '../../../utils/colors';
 import {Gap} from '../../atoms';
 
-const HomeProfile = ({name, profession}) => {
+const HomeProfile = ({name, profession, onPress}) => {
   return (
-    <View style={styles.page}>
+    <TouchableOpacity style={styles.page} onPress={onPress}>
       <View style={styles.profileWrapper}>
         <Image source={DMProfileSet} style={styles.profile} />
       </View>
@@ -16,7 +16,7 @@ const HomeProfile = ({name, profession}) => {
         <Text style={styles.name}>{name}</Text>
         <Text style={styles.profession}>{profession}</Text>
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 

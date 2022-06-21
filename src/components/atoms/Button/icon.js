@@ -1,17 +1,47 @@
-import {StyleSheet, TouchableOpacity} from 'react-native';
+import {StyleSheet, View, TouchableOpacity} from 'react-native';
 import React from 'react';
-import {ICDarkArrowBack} from '../../../assets';
+import {
+  ICDarkArrowBack,
+  ICLightArrowBack,
+  ICNext,
+  ICEditProfil,
+  ICLanguage,
+  ICRate,
+  ICHelp,
+} from '../../../assets';
 
-const Icon = ({image, onPress}) => {
+const Icon = ({image, isDisabled, onPress}) => {
   const Image = () => {
-    if (image === 'dark-back') {
+    if (image === 'darkBack') {
       return <ICDarkArrowBack />;
     }
-    if (image === 'light-back') {
-      return <ICDarkArrowBack />;
+    if (image === 'lightBack') {
+      return <ICLightArrowBack />;
     }
-    return <ICDarkArrowBack />;
+    if (image === 'next') {
+      return <ICNext />;
+    }
+    if (image === 'editProfile') {
+      return <ICEditProfil />;
+    }
+    if (image === 'language') {
+      return <ICLanguage />;
+    }
+    if (image === 'rate') {
+      return <ICRate />;
+    }
+    if (image === 'help') {
+      return <ICHelp />;
+    }
+    return <ICLightArrowBack />;
   };
+  if (isDisabled) {
+    return (
+      <View onPress={onPress}>
+        <Image />
+      </View>
+    );
+  }
   return (
     <TouchableOpacity onPress={onPress}>
       <Image />

@@ -17,4 +17,21 @@ import DMNews1 from './news1.png';
 import DMNews2 from './news2.png';
 import DMNews3 from './news3.png';
 
-export {DMProfileSet, DMDoctor1, DMNews1, DMHospital1};
+export {
+  DMProfileSet,
+  DMDoctor1,
+  DMDoctor2,
+  DMDoctor3,
+  DMDoctor4,
+  DMDoctor5,
+  DMDoctor6,
+  DMDoctor7,
+  DMDoctor8,
+  DMDoctor9,
+  DMDoctor10,
+  DMDoctor11,
+  DMNews1,
+  DMHospital1,
+  DMHospital2,
+  DMHospital3,
+};

@@ -17,6 +17,7 @@ const list_color = {
   blue: {
     1: '#0066CB',
     2: '#EDFCFD',
+    3: '#0BCAD4',
   },
   white: '#FFFFFF',
 };
@@ -37,10 +38,16 @@ const colors = {
     menuInactive: list_color.dark[2],
     menuActive: list_color.green[1],
     subTitle: list_color.dark[3],
+    white: list_color.white,
   },
   border: list_color.gray[2],
   card: list_color.blue[2],
+  chat: {
+    self: list_color.blue[2],
+    other: list_color.blue[3],
+  },
   newsBorder: list_color.gray[5],
+  disable: list_color.gray[3],
 };
 
 export default colors;

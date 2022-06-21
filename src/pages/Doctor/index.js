@@ -10,11 +10,17 @@ import colors from '../../utils/colors';
 import fonts from '../../utils/fonts';
 import {Gap} from '../../components';
 
-const Doctor = () => {
+const Doctor = ({navigation}) => {
   return (
     <View style={styles.page}>
       <View style={styles.content}>
-        <HomeProfile name={'Shayne Daila'} profession={'Product Manager'} />
+        <HomeProfile
+          name={'Shayne Daila'}
+          profession={'Product Manager'}
+          onPress={() => {
+            navigation.navigate('UserProfile');
+          }}
+        />
         <ScrollView>
           <Text style={styles.welcome}>
             Mau konsultasi dengan siapa hari ini?
@@ -22,7 +28,12 @@ const Doctor = () => {
           <Gap height={16} />
           <ScrollView horizontal showsHorizontalScrollIndicator={false}>
             <View style={styles.category}>
-              <DoctorCategory category={'dokter umum'} />
+              <DoctorCategory
+                category={'dokter umum'}
+                onPress={() => {
+                  navigation.navigate('ChooseDoctor');
+                }}
+              />
               <DoctorCategory category={'psikiater'} />
               <DoctorCategory category={'dokter obat'} />
               <DoctorCategory category={'dokter anak'} />
@@ -31,7 +42,13 @@ const Doctor = () => {
           <Gap height={30} />
           <Text style={styles.sectionLabel}>Top Rated Doctors</Text>
           <Gap height={16} />
-          <RatedDoctor name={'Alexa Rachel'} category={'Pediatrician'} />
+          <RatedDoctor
+            name={'Alexa Rachel'}
+            categoriy={'Pediatrician'}
+            onPress={() => {
+              navigation.navigate('DoctorProfile');
+            }}
+          />
           <RatedDoctor name={'Sunny Frank'} category={'Pediatrician'} />
           <RatedDoctor name={'Poe Minn'} category={'Pediatrician'} />
           <Gap height={14} />
@@ -70,7 +87,6 @@ const styles = StyleSheet.create({
   category: {
     flexDirection: 'row',
     marginHorizontal: 16,
-
   },
   sectionLabel: {
     fontSize: 16,

@@ -1,10 +1,10 @@
 import {ImageBackground, StyleSheet, Text, View} from 'react-native';
 import React from 'react';
-import {ILHospitalBG} from '../../assets/illustration';
+import {ILHospitalBG} from '../../assets';
 import colors from '../../utils/colors';
 import fonts from '../../utils/fonts';
 import {ListHospital} from '../../components/molecules';
-import { DMHospital1 } from '../../assets';
+import {DMHospital1, DMHospital2, DMHospital3} from '../../assets';
 
 const Hospitals = () => {
   return (
@@ -24,13 +24,13 @@ const Hospitals = () => {
           type="Rumah Sakit Anak"
           name="Happy Family Kids"
           address="Jln. Surya Sejahtera 20"
-          pic={DMHospital1}
+          pic={DMHospital2}
         />
         <ListHospital
           type="Rumah Sakit Jiwa"
           name="Tingkatan Paling Atas"
           address="Jln. Surya Sejahtera 20"
-          pic={DMHospital1}
+          pic={DMHospital3}
         />
       </View>
     </View>

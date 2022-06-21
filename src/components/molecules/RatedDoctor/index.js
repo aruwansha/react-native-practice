@@ -1,13 +1,13 @@
-import {StyleSheet, Text, View, Image} from 'react-native';
+import {StyleSheet, Text, View, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {DMDoctor1, ICStar} from '../../../assets';
 import fonts from '../../../utils/fonts';
 import colors from '../../../utils/colors';
 import {Gap} from '../../atoms';
 
-const RatedDoctor = ({name, category}) => {
+const RatedDoctor = ({name, category, onPress}) => {
   return (
-    <View style={styles.page}>
+    <TouchableOpacity style={styles.page} onPress={onPress}>
       <View style={styles.profileWrapper}>
         <Image source={DMDoctor1} style={styles.profile} />
         <Gap width={12} />
@@ -24,7 +24,7 @@ const RatedDoctor = ({name, category}) => {
         <ICStar />
         <ICStar />
       </View>
-    </View>
+    </TouchableOpacity>
   );
 };
 
